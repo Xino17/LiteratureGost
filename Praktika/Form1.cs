@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,8 @@ namespace Praktika
         private int lastTextBoxRight = 200;
         private List<string> textBoxContents = new List<string>();
         private int a, b;
+        
+        
 
         public Form1()
         {
@@ -25,7 +28,7 @@ namespace Praktika
             {
                 CreateTextBox(220, 60 + i * 75);
             }
-
+            
             CreateStaticTextBox(5, 60, "Автор");
             CreateStaticTextBox(5, 135, "Название");
             CreateStaticTextBox(5, 210, "Город:Издание");
@@ -118,11 +121,12 @@ namespace Praktika
 
                     textBoxContents.Add(currentTextBox.Text);
 
-                    if (a - 1 > 0)
+                    if (k - 1 > 0)
                     {
+                        
                         CreateTextBox(currentTextBox.Right + 20, currentTextBox.Top);
                         currentTextBox.Tag = true;
-                        a--;
+                        k--;
                         
                     }
 
@@ -140,7 +144,7 @@ namespace Praktika
                 e.Handled = true; 
             }
         }
-
+        private int k;
         private void InputTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -178,8 +182,9 @@ namespace Praktika
 
                     if (a != 0 && b != 0)
                     {
-                        MessageBox.Show("Кол-во введенных авторов и произведений, должно быть таким же, каким вы ввели в численном эквиваленте. Заполнять нужно по порядку без ошибок. После заполнения каждого поля нажимайте на ENTER, для сохранения данных. Чтобы получить преобразованную литературу по ГОСТУ, нажмите на кнопку \"Преобразовать\"");
+                        MessageBox.Show("Кол-во введенных авторов и произведений, должно быть таким же, каким вы ввели в численном эквиваленте. Заполнять нужно по порядку буз ошибок. После заполнения полей, нажмите на кнопку, чтобы получить преобразованную литературу по ГОСТУ");
                         EnableOtherTextBoxes();
+                        k = a;
                     }
                 }
             }
@@ -211,36 +216,37 @@ namespace Praktika
             {
                 message += textBoxContents[0] + " " + textBoxContents[1] + " / ";
                 message += textBoxContents[0] + " - ";
+                
             }
-                if (a == 1)
+            if (a == 1)
             {                
                 message += textBoxContents[0] + " " + textBoxContents[1] + " / ";
                 message += textBoxContents[0] + " - ";
             }
             if (a == 2)
             {
-                message += textBoxContents[0] + " " + textBoxContents[2] + " / ";
-                message += textBoxContents[0]  +" " + textBoxContents[1] + " - ";
+                message += textBoxContents[0] + " " + textBoxContents[2] + " / " ;
+                message += textBoxContents[0]  +", " + textBoxContents[1] + " - ";
             }
             if (a == 3)
             {
                 message += textBoxContents[0] + " " + textBoxContents[3] + " / ";
-                message += textBoxContents[0] + " " + textBoxContents[1] + " " + textBoxContents[2] + " - ";
+                message += textBoxContents[0] + ", " + textBoxContents[1] + ", " + textBoxContents[2] + " - ";
             }
             if (a == 4)
             {
                 message += textBoxContents[0] + " " + textBoxContents[4] + " / ";
-                message += textBoxContents[0] + " " + textBoxContents[1] + " " + textBoxContents[2] + " " + textBoxContents[3] + " - ";
+                message += textBoxContents[0] + ", " + textBoxContents[1] + ", " + textBoxContents[2] + ", " + textBoxContents[3] + " - ";
             }
             if (a == 5)
             {
                 message += textBoxContents[0] + " " + textBoxContents[5] + " / ";
-                message += textBoxContents[0] + " " + textBoxContents[1] + " " + textBoxContents[2] + " " + textBoxContents[3] + " " + textBoxContents[4] + " - ";
+                message += textBoxContents[0] + ", " + textBoxContents[1] + ", " + textBoxContents[2] + ", " + textBoxContents[3] + ", " + textBoxContents[4] + " - ";
             }
             if (a == 6)
             {
                 message += textBoxContents[0] + " " + textBoxContents[6] + " / ";
-                message += textBoxContents[0] + " " + textBoxContents[1] + " " + textBoxContents[2] + " " + textBoxContents[3] + " " + textBoxContents[4] + " " + textBoxContents[5] + " - ";
+                message += textBoxContents[0] + ", " + textBoxContents[1] + ", " + textBoxContents[2] + ", " + textBoxContents[3] + ", " + textBoxContents[4] + ", " + textBoxContents[5] + " - ";
             }
 
             
