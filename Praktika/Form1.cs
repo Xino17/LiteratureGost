@@ -349,41 +349,46 @@ namespace Praktika
                 {
                     message += "нет данных";
                 }
+
                 if (a + 2 < textBoxContents.Count)
                 {
-                    message += textBoxContents[a + 1] + ". ";
+                    message += textBoxContents[a + 2] + ". ";
                 }
                 else
                 {
                     message += "нет данных";
                 }
+
                 if (a + 3 < textBoxContents.Count)
                 {
-                    message += textBoxContents[a + 1] + ". - ";
+                    message += textBoxContents[a + 3] + ". - ";
                 }
                 else
                 {
                     message += "нет данных";
                 }
+
                 if (a + 4 < textBoxContents.Count)
                 {
-                    message += textBoxContents[a + 1] + ", ";
+                    message += textBoxContents[a + 4] + ", ";
                 }
                 else
                 {
                     message += "нет данных";
                 }
+
                 if (a + 5 < textBoxContents.Count)
                 {
-                    message += textBoxContents[a + 1] + ". -C. ";
+                    message += textBoxContents[a + 5] + ". -C. ";
                 }
                 else
                 {
                     message += "нет данных";
                 }
+
                 if (a + 6 < textBoxContents.Count)
                 {
-                    message += textBoxContents[a + 1] + ".";
+                    message += textBoxContents[a + 6] + ".";
                 }
                 else
                 {
@@ -527,14 +532,14 @@ namespace Praktika
                         }
                         CreateInputTextBox(300, 0);
                         CreateStaticTextBox(5, 0, "Кол-во авторов");
-                        CreateStaticTextBox(5, 50, "Автор");
+                        CreateStaticTextBox(5, 60, "Автор");
                         CreateStaticTextBox(5, 120, "Название");
-                        CreateStaticTextBox(5, 195, "Доп. инф.");
-                        CreateStaticTextBox(5, 270, "Конференция(место)");
-                        CreateStaticTextBox(5, 345, "Том(часть)");
-                        CreateStaticTextBox(5, 420, "Город:Издание");
-                        CreateStaticTextBox(5, 495, "Дата");
-                        CreateStaticTextBox(5, 570, "Страницы");
+                        CreateStaticTextBox(5, 180, "Доп. инф.");
+                        CreateStaticTextBox(5, 240, "Конференция(место)");
+                        CreateStaticTextBox(5, 300, "Том(часть)");
+                        CreateStaticTextBox(5, 360, "Город:Издание");
+                        CreateStaticTextBox(5, 420, "Дата");
+                        CreateStaticTextBox(5, 480, "Страницы");
                         CreateButton();
                         break;
                 }
