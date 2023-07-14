@@ -434,19 +434,19 @@ namespace Praktika
         {
             startButton = new Button();
             startButton.Text = "Старт";
-            startButton.Location = new System.Drawing.Point(850, 15); // Задайте координаты положения кнопки на форме
-            startButton.Size = new System.Drawing.Size(80, 30); // Задайте размер кнопки
+            startButton.Location = new System.Drawing.Point(850, 15); 
+            startButton.Size = new System.Drawing.Size(80, 30); 
             startButton.Click += StartButton_Click;
             Controls.Add(startButton);
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            // Проверяем выбранное значение в selectorComboBox
+            
             string selectedOption = selectorComboBox.SelectedItem?.ToString();
             if (!string.IsNullOrEmpty(selectedOption))
             {
-                // Выполняем нужные действия в зависимости от выбранного значения
+                
                 switch (selectedOption)
                 {
                     case "Статьи":
@@ -553,8 +553,8 @@ namespace Praktika
         {
             Button resetButton = new Button();
             resetButton.Text = "Сбросить";
-            resetButton.Location = new System.Drawing.Point(850, 15); // Задайте координаты положения кнопки на форме
-            resetButton.Size = new System.Drawing.Size(80, 30); // Задайте размер кнопки
+            resetButton.Location = new System.Drawing.Point(850, 15); 
+            resetButton.Size = new System.Drawing.Size(80, 30); 
             resetButton.Click += ResetButton_Click;
 
             Controls.Add(resetButton);
